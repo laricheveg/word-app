@@ -1,0 +1,24 @@
+<app-toast [message]="toast.message"></app-toast>
+
+<section class="wrap flex-center">
+
+  <div style="width:350px">
+    <h1>Login</h1>
+
+    <form class="flex-center" style="flex-direction:column" [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field class="full-width">
+        <input matInput type="email" name="email" formControlName="email" placeholder="Email" autofocus>
+        <mat-error>Please enter valid email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput type="password" name="password" formControlName="password" placeholder="Password" autofocus>
+        <mat-error>Please enter password</mat-error>
+      </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" type="submit" (click)="login()"
+      [disabled]="!loginForm.valid">Login</button>
+
+  </div>
+
+</section>

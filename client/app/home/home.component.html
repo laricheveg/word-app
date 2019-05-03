@@ -1,0 +1,15 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
+<section class="wrap flex-center" *ngIf="!isLoading">
+
+  <article>
+
+    <header>
+      <h1>Challenge to test nodejs, Angular & DB </h1>
+    </header>
+
+    <h4 class="flex-center">{{datas.message}}</h4>
+
+  </article>
+
+</section>

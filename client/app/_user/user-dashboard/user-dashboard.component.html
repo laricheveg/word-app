@@ -1,0 +1,37 @@
+<section class="wrap" class="flex-center">
+
+  <article>
+      
+    <header>
+      <h1>User Dashboard</h1>
+      <h4>Current User's name: {{ authService.currentUser.username }}</h4>
+    </header>
+
+    <div style="width:350px">    
+        <form class="flex-center" style="flex-direction:column" [formGroup]="stringForm" (ngSubmit)="submitString()">
+          <mat-form-field class="full-width">
+          <input matInput  name="string" formControlName="string" placeholder="String" autofocus>
+            <mat-error>Please enter string to process</mat-error>
+          </mat-form-field>
+        </form>
+        <button mat-raised-button color="primary" type="submit" (click)="submitString()"
+          [disabled]="!stringForm.valid">Submit</button>
+      </div>
+
+      <div *ngIf="!wordFrequency">
+          <h3>To check word frequency please start submitting string</h3>
+      </div>
+
+      <div *ngIf="wordFrequency" style="display:flex; flex-direction: column; margin-top:25px;">
+        <div style="text-align:right">
+            <button mat-raised-button color="warn" type="submit" (click)="deleteAll()">Delete all</button>
+        </div>
+        <ng-container *ngFor="let word of wordFrequency">
+          <div>
+            <strong>{{word.name}}</strong> : {{word.count}}
+          </div>   
+        </ng-container>
+      </div>
+  </article>
+
+</section>

@@ -1,0 +1,27 @@
+<div id="app">
+
+	<header>
+		<mat-toolbar color="primary" style="margin-bottom: 25px;">
+			<mat-toolbar-row style="display:flex; align-items:center">
+				<ul class="ul-menu">
+					<li *ngIf="auth.loggedIn">
+						<a mat-raised-button routerLink="/user" routerLinkActive="active">User Dashboard</a>
+					</li>
+					<li *ngIf="!auth.loggedIn">
+						<a mat-raised-button mat-raised-button routerLink="/login" routerLinkActive="active">Login</a>
+					</li>
+					<li *ngIf="auth.loggedIn">
+						<a mat-raised-button routerLink="/logout" routerLinkActive="active">Logout</a>
+					</li>
+				</ul>
+			</mat-toolbar-row>
+
+		</mat-toolbar>
+
+	</header>
+
+	<div id="main">
+		<router-outlet></router-outlet>
+	</div>
+
+</div>
