@@ -61,7 +61,7 @@ export default class UserRoleController extends UtilsController{
         $and: {
           id: req.params.id,
         }
-      }
+      } 
     });
   }
 

@@ -42,8 +42,8 @@ $ npm run dev
 $ npm run prod
 
 After seeds:
-    email: 'user@pean-auth-app.com';
-    password: user;
+email: 'user@pean-auth-app.com';
+    password: user; 
 ```
 
 ## build the app
