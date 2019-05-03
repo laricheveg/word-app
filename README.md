@@ -51,6 +51,6 @@ After seeds:
 // The build artifacts will be stored in the `dist/` directory
 $ ng build
 
-// for a production build
+// for a production build 
 $ ng build --prod
 ```
